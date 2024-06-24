@@ -136,6 +136,26 @@
     ]
   },
   {
+    "name": "Aniyomi: Debrid Index",
+    "pkg": "eu.kanade.tachiyomi.animeextension.all.debridindex",
+    "apk": "aniyomi-all.debridindex-v14.1.apk",
+    "lang": "all",
+    "code": 1,
+    "version": "14.1",
+    "nsfw": 0,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "Debrid Index",
+        "lang": "all",
+        "id": "824133852049869443",
+        "baseUrl": "https://torrentio.strem.fun",
+        "versionId": 1
+      }
+    ]
+  },
+  {
     "name": "Aniyomi: Google Drive",
     "pkg": "eu.kanade.tachiyomi.animeextension.all.googledrive",
     "apk": "aniyomi-all.googledrive-v14.15.apk",
@@ -171,6 +191,26 @@
         "lang": "all",
         "id": "7558489246571085102",
         "baseUrl": "",
+        "versionId": 1
+      }
+    ]
+  },
+  {
+    "name": "Aniyomi: Hentai Torrent (Torrent)",
+    "pkg": "eu.kanade.tachiyomi.animeextension.all.hentaitorrent",
+    "apk": "aniyomi-all.hentaitorrent-v14.1.apk",
+    "lang": "all",
+    "code": 1,
+    "version": "14.1",
+    "nsfw": 1,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "Hentai Torrent (Torrent)",
+        "lang": "all",
+        "id": "5093529078954574163",
+        "baseUrl": "https://www.hentaitorrents.com",
         "versionId": 1
       }
     ]
@@ -285,6 +325,53 @@
         "lang": "all",
         "id": "168969881246615628",
         "baseUrl": "https://missav.com",
+        "versionId": 1
+      }
+    ]
+  },
+  {
+    "name": "Aniyomi: Nyaa (Torrent)",
+    "pkg": "eu.kanade.tachiyomi.animeextension.all.nyaatorrent",
+    "apk": "aniyomi-all.nyaatorrent-v14.1.apk",
+    "lang": "all",
+    "code": 1,
+    "version": "14.1",
+    "nsfw": 1,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "Nyaa (Torrent)",
+        "lang": "all",
+        "id": "5310001068353260432",
+        "baseUrl": "https://nyaa.si/",
+        "versionId": 1
+      },
+      {
+        "name": "Nyaa Sukebein (Torrent)",
+        "lang": "all",
+        "id": "9136480360798112194",
+        "baseUrl": "https://sukebei.nyaa.si/",
+        "versionId": 1
+      }
+    ]
+  },
+  {
+    "name": "Aniyomi: PTorrent (Torrent)",
+    "pkg": "eu.kanade.tachiyomi.animeextension.all.ptorrent",
+    "apk": "aniyomi-all.ptorrent-v14.1.apk",
+    "lang": "all",
+    "code": 1,
+    "version": "14.1",
+    "nsfw": 1,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "PTorrent (Torrent)",
+        "lang": "all",
+        "id": "2514899426758091629",
+        "baseUrl": "https://www.ptorrents.com",
         "versionId": 1
       }
     ]
@@ -1119,6 +1206,26 @@
         "lang": "en",
         "id": "1135341941497249155",
         "baseUrl": "https://allmoviesforyou.net",
+        "versionId": 1
+      }
+    ]
+  },
+  {
+    "name": "Aniyomi: AniList",
+    "pkg": "eu.kanade.tachiyomi.animeextension.en.anilist",
+    "apk": "aniyomi-en.anilist-v14.3.apk",
+    "lang": "en",
+    "code": 3,
+    "version": "14.3",
+    "nsfw": 0,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "AniList",
+        "lang": "en",
+        "id": "297628545340942341",
+        "baseUrl": "https://anilist.co",
         "versionId": 1
       }
     ]
