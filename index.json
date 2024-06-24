@@ -2391,6 +2391,26 @@
     ]
   },
   {
+    "name": "Aniyomi: Animenix",
+    "pkg": "eu.kanade.tachiyomi.animeextension.es.animenix",
+    "apk": "aniyomi-es.animenix-v14.3.apk",
+    "lang": "es",
+    "code": 3,
+    "version": "14.3",
+    "nsfw": 0,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "Animenix",
+        "lang": "es",
+        "id": "1547119562002827048",
+        "baseUrl": "https://animenix.com",
+        "versionId": 1
+      }
+    ]
+  },
+  {
     "name": "Aniyomi: AnimeOnline.Ninja",
     "pkg": "eu.kanade.tachiyomi.animeextension.es.animeonlineninja",
     "apk": "aniyomi-es.animeonlineninja-v14.40.apk",
