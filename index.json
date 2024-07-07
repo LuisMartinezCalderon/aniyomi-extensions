@@ -3208,10 +3208,10 @@
   {
     "name": "Aniyomi: NekoSama",
     "pkg": "eu.kanade.tachiyomi.animeextension.fr.nekosama",
-    "apk": "aniyomi-fr.nekosama-v14.10.apk",
+    "apk": "aniyomi-fr.nekosama-v14.11.apk",
     "lang": "fr",
-    "code": 10,
-    "version": "14.10",
+    "code": 11,
+    "version": "14.11",
     "nsfw": 1,
     "hasReadme": 0,
     "hasChangelog": 0,
