@@ -3808,10 +3808,10 @@
   {
     "name": "Aniyomi: AnimePlayer",
     "pkg": "eu.kanade.tachiyomi.animeextension.pt.animeplayer",
-    "apk": "aniyomi-pt.animeplayer-v14.5.apk",
+    "apk": "aniyomi-pt.animeplayer-v14.6.apk",
     "lang": "pt-BR",
-    "code": 5,
-    "version": "14.5",
+    "code": 6,
+    "version": "14.6",
     "nsfw": 1,
     "hasReadme": 0,
     "hasChangelog": 0,
