@@ -4495,10 +4495,10 @@
   {
     "name": "Aniyomi: HentaiZM",
     "pkg": "eu.kanade.tachiyomi.animeextension.tr.hentaizm",
-    "apk": "aniyomi-tr.hentaizm-v14.2.apk",
+    "apk": "aniyomi-tr.hentaizm-v14.3.apk",
     "lang": "tr",
-    "code": 2,
-    "version": "14.2",
+    "code": 3,
+    "version": "14.3",
     "nsfw": 1,
     "hasReadme": 0,
     "hasChangelog": 0,
@@ -4507,7 +4507,7 @@
         "name": "HentaiZM",
         "lang": "tr",
         "id": "9058842310298227429",
-        "baseUrl": "https://www.hentaizm.fun",
+        "baseUrl": "https://www.hentaizm.life",
         "versionId": 1
       }
     ]
