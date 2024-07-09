@@ -1453,10 +1453,10 @@
   {
     "name": "Aniyomi: AsianLoad",
     "pkg": "eu.kanade.tachiyomi.animeextension.en.asianload",
-    "apk": "aniyomi-en.asianload-v14.38.apk",
+    "apk": "aniyomi-en.asianload-v14.39.apk",
     "lang": "en",
-    "code": 38,
-    "version": "14.38",
+    "code": 39,
+    "version": "14.39",
     "nsfw": 0,
     "hasReadme": 0,
     "hasChangelog": 0,
@@ -1465,7 +1465,7 @@
         "name": "AsianLoad",
         "lang": "en",
         "id": "2063258341485460293",
-        "baseUrl": "https://asianhd1.com",
+        "baseUrl": "https://draplay.info",
         "versionId": 1
       }
     ]
