@@ -3908,10 +3908,10 @@
   {
     "name": "Aniyomi: Animes Games",
     "pkg": "eu.kanade.tachiyomi.animeextension.pt.animesgames",
-    "apk": "aniyomi-pt.animesgames-v14.3.apk",
+    "apk": "aniyomi-pt.animesgames-v14.4.apk",
     "lang": "pt-BR",
-    "code": 3,
-    "version": "14.3",
+    "code": 4,
+    "version": "14.4",
     "nsfw": 0,
     "hasReadme": 0,
     "hasChangelog": 0,
