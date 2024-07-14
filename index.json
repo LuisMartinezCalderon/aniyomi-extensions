@@ -2513,10 +2513,10 @@
   {
     "name": "Aniyomi: Cuevana",
     "pkg": "eu.kanade.tachiyomi.animeextension.es.cuevana",
-    "apk": "aniyomi-es.cuevana-v14.31.apk",
+    "apk": "aniyomi-es.cuevana-v14.32.apk",
     "lang": "es",
-    "code": 31,
-    "version": "14.31",
+    "code": 32,
+    "version": "14.32",
     "nsfw": 0,
     "hasReadme": 0,
     "hasChangelog": 0,
