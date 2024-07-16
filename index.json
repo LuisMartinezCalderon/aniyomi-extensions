@@ -3946,6 +3946,46 @@
     ]
   },
   {
+    "name": "Aniyomi: AnimesOnlineCC",
+    "pkg": "eu.kanade.tachiyomi.animeextension.pt.animesonlinecc",
+    "apk": "aniyomi-pt.animesonlinecc-v14.3.apk",
+    "lang": "pt-BR",
+    "code": 3,
+    "version": "14.3",
+    "nsfw": 1,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "Animes Online CC",
+        "lang": "pt-BR",
+        "id": "7386550303236826765",
+        "baseUrl": "https://animesonlinecc.to",
+        "versionId": 1
+      }
+    ]
+  },
+  {
+    "name": "Aniyomi: AnimesOnlineCloud",
+    "pkg": "eu.kanade.tachiyomi.animeextension.pt.animesonlinecloud",
+    "apk": "aniyomi-pt.animesonlinecloud-v14.3.apk",
+    "lang": "pt-BR",
+    "code": 3,
+    "version": "14.3",
+    "nsfw": 1,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "Animes Online Cloud",
+        "lang": "pt-BR",
+        "id": "6962698096138673113",
+        "baseUrl": "https://animesonline.cloud/",
+        "versionId": 1
+      }
+    ]
+  },
+  {
     "name": "Aniyomi: AnimesROLL",
     "pkg": "eu.kanade.tachiyomi.animeextension.pt.animesroll",
     "apk": "aniyomi-pt.animesroll-v14.4.apk",
