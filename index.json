@@ -2511,6 +2511,26 @@
     ]
   },
   {
+    "name": "Aniyomi: Cinecalidad",
+    "pkg": "eu.kanade.tachiyomi.animeextension.es.cinecalidad",
+    "apk": "aniyomi-es.cinecalidad-v14.1.apk",
+    "lang": "es",
+    "code": 1,
+    "version": "14.1",
+    "nsfw": 0,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "Cinecalidad",
+        "lang": "es",
+        "id": "661928073480792687",
+        "baseUrl": "https://www.cinecalidad.ec",
+        "versionId": 1
+      }
+    ]
+  },
+  {
     "name": "Aniyomi: Cuevana",
     "pkg": "eu.kanade.tachiyomi.animeextension.es.cuevana",
     "apk": "aniyomi-es.cuevana-v14.34.apk",
