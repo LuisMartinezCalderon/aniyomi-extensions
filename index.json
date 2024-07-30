@@ -2513,10 +2513,10 @@
   {
     "name": "Aniyomi: Cinecalidad",
     "pkg": "eu.kanade.tachiyomi.animeextension.es.cinecalidad",
-    "apk": "aniyomi-es.cinecalidad-v14.2.apk",
+    "apk": "aniyomi-es.cinecalidad-v14.3.apk",
     "lang": "es",
-    "code": 2,
-    "version": "14.2",
+    "code": 3,
+    "version": "14.3",
     "nsfw": 0,
     "hasReadme": 0,
     "hasChangelog": 0,
