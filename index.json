@@ -2620,10 +2620,10 @@
   {
     "name": "Aniyomi: EnNovelas",
     "pkg": "eu.kanade.tachiyomi.animeextension.es.ennovelas",
-    "apk": "aniyomi-es.ennovelas-v14.13.apk",
+    "apk": "aniyomi-es.ennovelas-v14.14.apk",
     "lang": "es",
-    "code": 13,
-    "version": "14.13",
+    "code": 14,
+    "version": "14.14",
     "nsfw": 0,
     "hasReadme": 0,
     "hasChangelog": 0,
@@ -2632,7 +2632,7 @@
         "name": "EnNovelas",
         "lang": "es",
         "id": "6683521813386506618",
-        "baseUrl": "https://u.ennovelas.net",
+        "baseUrl": "https://ennovelas.com.de/",
         "versionId": 1
       }
     ]
