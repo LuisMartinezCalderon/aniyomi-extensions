@@ -3168,10 +3168,10 @@
   {
     "name": "Aniyomi: FrAnime",
     "pkg": "eu.kanade.tachiyomi.animeextension.fr.franime",
-    "apk": "aniyomi-fr.franime-v14.13.apk",
+    "apk": "aniyomi-fr.franime-v14.14.apk",
     "lang": "fr",
-    "code": 13,
-    "version": "14.13",
+    "code": 14,
+    "version": "14.14",
     "nsfw": 1,
     "hasReadme": 0,
     "hasChangelog": 0,
