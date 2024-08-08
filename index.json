@@ -2551,18 +2551,18 @@
     ]
   },
   {
-    "name": "Aniyomi: Cinecalidad",
+    "name": "Aniyomi: CineCalidad",
     "pkg": "eu.kanade.tachiyomi.animeextension.es.cinecalidad",
-    "apk": "aniyomi-es.cinecalidad-v14.4.apk",
+    "apk": "aniyomi-es.cinecalidad-v14.5.apk",
     "lang": "es",
-    "code": 4,
-    "version": "14.4",
+    "code": 5,
+    "version": "14.5",
     "nsfw": 0,
     "hasReadme": 0,
     "hasChangelog": 0,
     "sources": [
       {
-        "name": "Cinecalidad",
+        "name": "CineCalidad",
         "lang": "es",
         "id": "661928073480792687",
         "baseUrl": "https://www.cinecalidad.ec",
