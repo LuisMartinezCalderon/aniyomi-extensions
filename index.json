@@ -2720,10 +2720,10 @@
   {
     "name": "Aniyomi: Hackstore",
     "pkg": "eu.kanade.tachiyomi.animeextension.es.hackstore",
-    "apk": "aniyomi-es.hackstore-v14.15.apk",
+    "apk": "aniyomi-es.hackstore-v14.17.apk",
     "lang": "es",
-    "code": 15,
-    "version": "14.15",
+    "code": 17,
+    "version": "14.17",
     "nsfw": 0,
     "hasReadme": 0,
     "hasChangelog": 0,
