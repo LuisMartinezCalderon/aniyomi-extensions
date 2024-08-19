@@ -1291,6 +1291,26 @@
     ]
   },
   {
+    "name": "Aniyomi: AnimeGG",
+    "pkg": "eu.kanade.tachiyomi.animeextension.en.animegg",
+    "apk": "aniyomi-en.animegg-v14.1.apk",
+    "lang": "en",
+    "code": 1,
+    "version": "14.1",
+    "nsfw": 0,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "AnimeGG",
+        "lang": "en",
+        "id": "2247987965040486818",
+        "baseUrl": "https://www.animegg.org",
+        "versionId": 1
+      }
+    ]
+  },
+  {
     "name": "Aniyomi: AnimeKhor",
     "pkg": "eu.kanade.tachiyomi.animeextension.en.animekhor",
     "apk": "aniyomi-en.animekhor-v14.7.apk",
@@ -2546,6 +2566,26 @@
         "lang": "es",
         "id": "27781270364033644",
         "baseUrl": "https://www.beatz-anime.net",
+        "versionId": 1
+      }
+    ]
+  },
+  {
+    "name": "Aniyomi: Cine24h",
+    "pkg": "eu.kanade.tachiyomi.animeextension.es.cine24h",
+    "apk": "aniyomi-es.cine24h-v14.1.apk",
+    "lang": "es",
+    "code": 1,
+    "version": "14.1",
+    "nsfw": 0,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "Cine24h",
+        "lang": "es",
+        "id": "431438597808105152",
+        "baseUrl": "https://cine24h.online",
         "versionId": 1
       }
     ]
