@@ -3166,6 +3166,26 @@
     ]
   },
   {
+    "name": "Aniyomi: VeoHentai",
+    "pkg": "eu.kanade.tachiyomi.animeextension.es.veohentai",
+    "apk": "aniyomi-es.veohentai-v14.1.apk",
+    "lang": "es",
+    "code": 1,
+    "version": "14.1",
+    "nsfw": 1,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "VeoHentai",
+        "lang": "es",
+        "id": "1192827176989085393",
+        "baseUrl": "https://veohentai.com",
+        "versionId": 1
+      }
+    ]
+  },
+  {
     "name": "Aniyomi: VerAnimes",
     "pkg": "eu.kanade.tachiyomi.animeextension.es.veranimes",
     "apk": "aniyomi-es.veranimes-v14.3.apk",
