@@ -399,10 +399,10 @@
   {
     "name": "Aniyomi: Sudatchi",
     "pkg": "eu.kanade.tachiyomi.animeextension.all.sudatchi",
-    "apk": "aniyomi-all.sudatchi-v14.7.apk",
+    "apk": "aniyomi-all.sudatchi-v14.8.apk",
     "lang": "all",
-    "code": 7,
-    "version": "14.7",
+    "code": 8,
+    "version": "14.8",
     "nsfw": 1,
     "hasReadme": 0,
     "hasChangelog": 0,
