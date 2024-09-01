@@ -2264,6 +2264,26 @@
     ]
   },
   {
+    "name": "Aniyomi: YugenAnime",
+    "pkg": "eu.kanade.tachiyomi.animeextension.en.yugenanime",
+    "apk": "aniyomi-en.yugenanime-v14.1.apk",
+    "lang": "en",
+    "code": 1,
+    "version": "14.1",
+    "nsfw": 0,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "YugenAnime",
+        "lang": "en",
+        "id": "3232653542262230525",
+        "baseUrl": "https://yugenanime.sx",
+        "versionId": 1
+      }
+    ]
+  },
+  {
     "name": "Aniyomi: HiAnime",
     "pkg": "eu.kanade.tachiyomi.animeextension.en.zoro",
     "apk": "aniyomi-en.zoro-v14.43.apk",
