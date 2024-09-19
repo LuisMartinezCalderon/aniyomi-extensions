@@ -3159,6 +3159,26 @@
     ]
   },
   {
+    "name": "Aniyomi: zeroanime",
+    "pkg": "eu.kanade.tachiyomi.animeextension.es.zeroanime",
+    "apk": "aniyomi-es.zeroanime-v14.1.apk",
+    "lang": "es",
+    "code": 1,
+    "version": "14.1",
+    "nsfw": 0,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "zeroanime",
+        "lang": "es",
+        "id": "2089287837152010776",
+        "baseUrl": "https://www4.zeroanime.xyz",
+        "versionId": 1
+      }
+    ]
+  },
+  {
     "name": "Aniyomi: Anime-Sama",
     "pkg": "eu.kanade.tachiyomi.animeextension.fr.animesama",
     "apk": "aniyomi-fr.animesama-v14.11.apk",
