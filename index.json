@@ -2364,6 +2364,26 @@
     ]
   },
   {
+    "name": "Aniyomi: Animejl",
+    "pkg": "eu.kanade.tachiyomi.animeextension.es.animejl",
+    "apk": "aniyomi-es.animejl-v14.1.apk",
+    "lang": "es",
+    "code": 1,
+    "version": "14.1",
+    "nsfw": 1,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "Animejl",
+        "lang": "es",
+        "id": "2934893552535692335",
+        "baseUrl": "https://www.anime-jl.net",
+        "versionId": 1
+      }
+    ]
+  },
+  {
     "name": "Aniyomi: AnimeLatinoHD",
     "pkg": "eu.kanade.tachiyomi.animeextension.es.animelatinohd",
     "apk": "aniyomi-es.animelatinohd-v14.36.apk",
