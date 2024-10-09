@@ -2346,10 +2346,10 @@
   {
     "name": "Aniyomi: Animefenix",
     "pkg": "eu.kanade.tachiyomi.animeextension.es.animefenix",
-    "apk": "aniyomi-es.animefenix-v14.50.apk",
+    "apk": "aniyomi-es.animefenix-v14.51.apk",
     "lang": "es",
-    "code": 50,
-    "version": "14.50",
+    "code": 51,
+    "version": "14.51",
     "nsfw": 0,
     "hasReadme": 0,
     "hasChangelog": 0,
