@@ -3561,10 +3561,10 @@
   {
     "name": "Aniyomi: YoMovies",
     "pkg": "eu.kanade.tachiyomi.animeextension.hi.yomovies",
-    "apk": "aniyomi-hi.yomovies-v14.19.apk",
+    "apk": "aniyomi-hi.yomovies-v14.20.apk",
     "lang": "hi",
-    "code": 19,
-    "version": "14.19",
+    "code": 20,
+    "version": "14.20",
     "nsfw": 1,
     "hasReadme": 0,
     "hasChangelog": 0,
