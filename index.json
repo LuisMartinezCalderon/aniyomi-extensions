@@ -4481,10 +4481,10 @@
   {
     "name": "Aniyomi: Megaflix",
     "pkg": "eu.kanade.tachiyomi.animeextension.pt.megaflix",
-    "apk": "aniyomi-pt.megaflix-v14.21.apk",
+    "apk": "aniyomi-pt.megaflix-v14.22.apk",
     "lang": "pt-BR",
-    "code": 21,
-    "version": "14.21",
+    "code": 22,
+    "version": "14.22",
     "nsfw": 1,
     "hasReadme": 0,
     "hasChangelog": 0,
@@ -4493,7 +4493,7 @@
         "name": "Megaflix",
         "lang": "pt-BR",
         "id": "1129545692275462313",
-        "baseUrl": "https://megaflix.co",
+        "baseUrl": "https://megaflix.ac",
         "versionId": 1
       }
     ]
@@ -4561,10 +4561,10 @@
   {
     "name": "Aniyomi: Pobreflix",
     "pkg": "eu.kanade.tachiyomi.animeextension.pt.pobreflix",
-    "apk": "aniyomi-pt.pobreflix-v14.15.apk",
+    "apk": "aniyomi-pt.pobreflix-v14.16.apk",
     "lang": "pt-BR",
-    "code": 15,
-    "version": "14.15",
+    "code": 16,
+    "version": "14.16",
     "nsfw": 1,
     "hasReadme": 0,
     "hasChangelog": 0,
@@ -4573,7 +4573,7 @@
         "name": "Pobreflix",
         "lang": "pt-BR",
         "id": "5761016601933875772",
-        "baseUrl": "https://pobreflix4.art",
+        "baseUrl": "https://pobreflix.global",
         "versionId": 1
       }
     ]
