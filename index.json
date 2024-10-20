@@ -3152,6 +3152,26 @@
     ]
   },
   {
+    "name": "Aniyomi: SoloLatino",
+    "pkg": "eu.kanade.tachiyomi.animeextension.es.sololatino",
+    "apk": "aniyomi-es.sololatino-v14.3.apk",
+    "lang": "es",
+    "code": 3,
+    "version": "14.3",
+    "nsfw": 0,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "SoloLatino",
+        "lang": "es",
+        "id": "2714169179278506077",
+        "baseUrl": "https://sololatino.net",
+        "versionId": 1
+      }
+    ]
+  },
+  {
     "name": "Aniyomi: TioanimeH",
     "pkg": "eu.kanade.tachiyomi.animeextension.es.tioanimeh",
     "apk": "aniyomi-es.tioanimeh-v14.24.apk",
