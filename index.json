@@ -2346,10 +2346,10 @@
   {
     "name": "Aniyomi: Animefenix",
     "pkg": "eu.kanade.tachiyomi.animeextension.es.animefenix",
-    "apk": "aniyomi-es.animefenix-v14.51.apk",
+    "apk": "aniyomi-es.animefenix-v14.52.apk",
     "lang": "es",
-    "code": 51,
-    "version": "14.51",
+    "code": 52,
+    "version": "14.52",
     "nsfw": 0,
     "hasReadme": 0,
     "hasChangelog": 0,
@@ -2358,7 +2358,7 @@
         "name": "AnimeFenix",
         "lang": "es",
         "id": "1901838936011764172",
-        "baseUrl": "https://www.animefenix.tv",
+        "baseUrl": "https://www3.animefenix.tv",
         "versionId": 1
       }
     ]
