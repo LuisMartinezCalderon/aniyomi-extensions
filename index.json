@@ -4601,10 +4601,10 @@
   {
     "name": "Aniyomi: RineCloud",
     "pkg": "eu.kanade.tachiyomi.animeextension.pt.rinecloud",
-    "apk": "aniyomi-pt.rinecloud-v14.14.apk",
+    "apk": "aniyomi-pt.rinecloud-v14.15.apk",
     "lang": "pt-BR",
-    "code": 14,
-    "version": "14.14",
+    "code": 15,
+    "version": "14.15",
     "nsfw": 0,
     "hasReadme": 0,
     "hasChangelog": 0,
