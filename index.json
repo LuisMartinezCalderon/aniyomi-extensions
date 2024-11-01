@@ -3172,6 +3172,26 @@
     ]
   },
   {
+    "name": "Aniyomi: Serieskao",
+    "pkg": "eu.kanade.tachiyomi.animeextension.es.serieskao",
+    "apk": "aniyomi-es.serieskao-v14.1.apk",
+    "lang": "es",
+    "code": 1,
+    "version": "14.1",
+    "nsfw": 0,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "SeriesKao",
+        "lang": "es",
+        "id": "1179552672777572300",
+        "baseUrl": "https://serieskao.top",
+        "versionId": 1
+      }
+    ]
+  },
+  {
     "name": "Aniyomi: SoloLatino",
     "pkg": "eu.kanade.tachiyomi.animeextension.es.sololatino",
     "apk": "aniyomi-es.sololatino-v14.4.apk",
