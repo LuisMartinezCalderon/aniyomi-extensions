@@ -2671,6 +2671,26 @@
     ]
   },
   {
+    "name": "Aniyomi: DeTodoPeliculas",
+    "pkg": "eu.kanade.tachiyomi.animeextension.es.detodopeliculas",
+    "apk": "aniyomi-es.detodopeliculas-v14.2.apk",
+    "lang": "es",
+    "code": 2,
+    "version": "14.2",
+    "nsfw": 0,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "DeTodo Peliculas",
+        "lang": "es",
+        "id": "4976463260586484820",
+        "baseUrl": "https://detodopeliculas.nu",
+        "versionId": 1
+      }
+    ]
+  },
+  {
     "name": "Aniyomi: Doramasflix",
     "pkg": "eu.kanade.tachiyomi.animeextension.es.doramasflix",
     "apk": "aniyomi-es.doramasflix-v14.30.apk",
