@@ -2771,6 +2771,26 @@
     ]
   },
   {
+    "name": "Aniyomi: FlixLatam",
+    "pkg": "eu.kanade.tachiyomi.animeextension.es.flixlatam",
+    "apk": "aniyomi-es.flixlatam-v14.3.apk",
+    "lang": "es",
+    "code": 3,
+    "version": "14.3",
+    "nsfw": 0,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "FlixLatam",
+        "lang": "es",
+        "id": "2400169316701597839",
+        "baseUrl": "https://flixlatam.com",
+        "versionId": 1
+      }
+    ]
+  },
+  {
     "name": "Aniyomi: Gnula",
     "pkg": "eu.kanade.tachiyomi.animeextension.es.gnula",
     "apk": "aniyomi-es.gnula-v14.28.apk",
