@@ -3339,6 +3339,26 @@
     ]
   },
   {
+    "name": "Aniyomi: VerSeriesOnline",
+    "pkg": "eu.kanade.tachiyomi.animeextension.es.verseriesonline",
+    "apk": "aniyomi-es.verseriesonline-v14.1.apk",
+    "lang": "es",
+    "code": 1,
+    "version": "14.1",
+    "nsfw": 0,
+    "hasReadme": 0,
+    "hasChangelog": 0,
+    "sources": [
+      {
+        "name": "VerSeriesOnline",
+        "lang": "es",
+        "id": "8058040181507333420",
+        "baseUrl": "https://www.verseriesonline.net",
+        "versionId": 1
+      }
+    ]
+  },
+  {
     "name": "Aniyomi: zeroanime",
     "pkg": "eu.kanade.tachiyomi.animeextension.es.zeroanime",
     "apk": "aniyomi-es.zeroanime-v14.1.apk",
