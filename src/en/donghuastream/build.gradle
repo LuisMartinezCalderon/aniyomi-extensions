@@ -2,7 +2,7 @@ ext {
     extName = 'DonghuaStream'
     extClass = '.DonghuaStream'
     themePkg = 'animestream'
-    baseUrl = 'https://donghuastream.co.in'
+    baseUrl = 'https://donghuastream.org/'
     overrideVersionCode = 8
 }
 
