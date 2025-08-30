@@ -10,7 +10,7 @@ class MundoDonghuaProvider : MainAPI() {
     override var mainUrl = "https://www.mundodonghua.com"
     override var name = "MundoDonghua"
     override val hasMainPage = true
-    override var lang = "es"
+    override var lang = "es" 
     override val supportedTypes = setOf(TvType.Anime)
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
