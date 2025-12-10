@@ -122,29 +122,38 @@ class MundoDonghua : ConfigurableAnimeSource, ParsedAnimeHttpSource() {
                             } catch (_: Exception) {}
                         }
                     }
-                    if (unpack.contains("protea_tab")) {
-                        try {
-                            val slug = unpack.substringAfter("\"slug\":\"").substringBefore("\"")
+                   if (unpack.contains("protea_tab")) {
+    try {
+        val slug = unpack.substringAfter("\"slug\":\"").substringBefore("\"")
 
-                            val newHeaders = headers.newBuilder()
-                                .add("referer", "${response.request.url}")
-                                .add("authority", baseUrl.substringAfter("//"))
-                                .add("accept", "*/*")
-                                .build()
+        val newHeaders = headers.newBuilder()
+            .add("referer", "${response.request.url}")
+            .add("authority", baseUrl.substringAfter("//"))
+            .add("accept", "*/*")
+            .build()
 
-                            val slugPlayer = client.newCall(GET("$baseUrl/api_donghua.php?slug=$slug", headers = newHeaders)).execute().asJsoup().body().toString().substringAfter("\"url\":\"").substringBefore("\"")
+        val slugPlayer = client.newCall(GET("$baseUrl/api_donghua.php?slug=$slug", headers = newHeaders))
+            .execute().body?.string()?.substringAfter("\"url\":\"")?.substringBefore("\"") ?: ""
 
-                            val videoHeaders = headers.newBuilder()
-                                .add("authority", "www.mdplayer.xyz")
-                                .add("referer", "$baseUrl/")
-                                .build()
+        val videoHeaders = headers.newBuilder()
+            .add("authority", "www.mdplayer.xyz")
+            .add("referer", "$baseUrl/")
+            .build()
 
-                            val videoId = client.newCall(GET("https://www.mdplayer.xyz/nemonicplayer/dmplayer.php?key=$slugPlayer", headers = videoHeaders))
-                                .execute().asJsoup().body().toString().substringAfter("video-id=\"").substringBefore("\"")
+        val body = client.newCall(GET("https://www.mdplayer.xyz/nemonicplayer/dmplayer.php?key=$slugPlayer", headers = videoHeaders))
+            .execute().body?.string() ?: ""
 
-                            DailymotionExtractor(client, headers).videosFromUrl("https://www.dailymotion.com/embed/video/$videoId", prefix = "Dailymotion:").let { videoList.addAll(it) }
-                        } catch (_: Exception) {}
-                    }
+        // Regex más robusto para capturar el videoId
+        val videoId = Regex("video_id\":\"(.*?)\"").find(body)?.groupValues?.get(1) ?: ""
+
+        if (videoId.isNotEmpty()) {
+            val embedUrl = "https://www.dailymotion.com/embed/video/$videoId"
+            val videos = DailymotionExtractor(client, headers).videosFromUrl(embedUrl, prefix = "Dailymotion:")
+            videoList.addAll(videos)
+        }
+    } catch (_: Exception) {}
+}
+
                     if (unpack.contains("asura_tab")) {
                         fetchUrls(unpack).map { url ->
                             try {
