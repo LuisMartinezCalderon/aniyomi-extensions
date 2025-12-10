@@ -24,7 +24,6 @@ import org.jsoup.nodes.Document
 import org.jsoup.nodes.Element
 import uy.kohesive.injekt.Injekt
 import uy.kohesive.injekt.api.get
-
 class MundoDonghua : ConfigurableAnimeSource, ParsedAnimeHttpSource() {
 
     override val name = "MundoDonghua"
@@ -43,21 +42,20 @@ class MundoDonghua : ConfigurableAnimeSource, ParsedAnimeHttpSource() {
 
     override fun popularAnimeRequest(page: Int) = GET("$baseUrl/lista-donghuas/$page")
 
-    override fun popularAnimeFromElement(element: Element) =
-            SAnime.create().apply {
-                setUrlWithoutDomain(element.attr("href"))
-                title = element.selectFirst("h5")!!.text().removeSurrounding("\"")
-                thumbnail_url = element.selectFirst("img")?.attr("abs:src")
-            }
+    override fun popularAnimeFromElement(element: Element) = SAnime.create().apply {
+        setUrlWithoutDomain(element.attr("href"))
+        title = element.selectFirst("h5")!!.text().removeSurrounding("\"")
+        thumbnail_url = element.selectFirst("img")?.attr("abs:src")
+    }
 
     override fun popularAnimeNextPageSelector() = "ul.pagination li:last-child a"
 
     override fun latestUpdatesNextPageSelector() = popularAnimeNextPageSelector()
 
     override fun latestUpdatesFromElement(element: Element) =
-            popularAnimeFromElement(element).apply {
-                url = url.replace("/ver/", "/donghua/").substringBeforeLast("/")
-            }
+        popularAnimeFromElement(element).apply {
+            url = url.replace("/ver/", "/donghua/").substringBeforeLast("/")
+        }
 
     override fun latestUpdatesRequest(page: Int) = GET("$baseUrl/lista-episodios/$page")
 
@@ -65,38 +63,16 @@ class MundoDonghua : ConfigurableAnimeSource, ParsedAnimeHttpSource() {
 
     override fun animeDetailsParse(document: Document): SAnime {
         val anime = SAnime.create()
-        anime.thumbnail_url =
-                baseUrl +
-                        document.selectFirst(
-                                        "div.col-md-4.col-xs-12.mb-10 div.row.sm-row > div.side-banner > div.banner-side-serie"
-                                )!!
-                                .attr("style")
-                                .substringAfter("background-image: url(")
-                                .substringBefore(")")
-        anime.title =
-                document.selectFirst(
-                                "div.col-md-4.col-xs-12.mb-10 div.row.sm-row div div.sf.fc-dark.ls-title-serie"
-                        )!!
-                        .html()
-        anime.description =
-                document.selectFirst("section div.row div.col-md-8 div.sm-row p.text-justify")!!
-                        .text()
-                        .removeSurrounding("\"")
-        anime.genre =
-                document.select("div.col-md-8.col-xs-12 div.sm-row a.generos span.label")
-                        .joinToString { it.text() }
-        anime.status =
-                parseStatus(
-                        document.select(
-                                        "div.col-md-4.col-xs-12.mb-10 div.row.sm-row div:nth-child(2) div:nth-child(2) p span.badge"
-                                )
-                                .text()
-                )
+        anime.thumbnail_url = baseUrl + document.selectFirst("div.col-md-4.col-xs-12.mb-10 div.row.sm-row > div.side-banner > div.banner-side-serie")!!
+            .attr("style").substringAfter("background-image: url(").substringBefore(")")
+        anime.title = document.selectFirst("div.col-md-4.col-xs-12.mb-10 div.row.sm-row div div.sf.fc-dark.ls-title-serie")!!.html()
+        anime.description = document.selectFirst("section div.row div.col-md-8 div.sm-row p.text-justify")!!.text().removeSurrounding("\"")
+        anime.genre = document.select("div.col-md-8.col-xs-12 div.sm-row a.generos span.label").joinToString { it.text() }
+        anime.status = parseStatus(document.select("div.col-md-4.col-xs-12.mb-10 div.row.sm-row div:nth-child(2) div:nth-child(2) p span.badge").text())
         return anime
     }
 
-    override fun episodeListSelector() =
-            "div.sm-row.mt-10 div.donghua-list-scroll ul.donghua-list a"
+    override fun episodeListSelector() = "div.sm-row.mt-10 div.donghua-list-scroll ul.donghua-list a"
 
     override fun episodeFromElement(element: Element): SEpisode {
         val episode = SEpisode.create()
@@ -113,8 +89,7 @@ class MundoDonghua : ConfigurableAnimeSource, ParsedAnimeHttpSource() {
 
     private fun fetchUrls(text: String?): List<String> {
         if (text.isNullOrEmpty()) return listOf()
-        val linkRegex =
-                "(http|ftp|https):\\/\\/([\\w_-]+( ?: (?:\\.[\\w_-]+)+))([\\w.,@?^ = %&:\\/~+#-]*[\\w@?^ = %&\\/~+#-])".toRegex()
+        val linkRegex = "(http|ftp|https):\\/\\/([\\w_-]+(?:(?:\\.[\\w_-]+)+))([\\w.,@?^=%&:\\/~+#-]*[\\w@?^=%&\\/~+#-])".toRegex()
         return linkRegex.findAll(text).map { it.value.trim().removeSurrounding("\"") }.toList()
     }
 
@@ -124,7 +99,9 @@ class MundoDonghua : ConfigurableAnimeSource, ParsedAnimeHttpSource() {
         document.select("script").forEach { script ->
             if (script.data().contains("eval(function(p,a,c,k,e")) {
                 val packedRegex = Regex("eval\\(function\\(p,a,c,k,e,.*\\)\\)")
-                packedRegex.findAll(script.data()).map { it.value }.toList().map {
+                packedRegex.findAll(script.data()).map {
+                    it.value
+                }.toList().map {
                     val unpack = getAndUnpack(it).first()
                     if (unpack.contains("amagi_tab")) {
                         fetchUrls(unpack).map { url ->
@@ -136,19 +113,12 @@ class MundoDonghua : ConfigurableAnimeSource, ParsedAnimeHttpSource() {
                     if (unpack.contains("fmoon_tab")) {
                         fetchUrls(unpack).map { url ->
                             try {
-                                val newHeaders =
-                                        headers.newBuilder()
-                                                .add("authority", url.toHttpUrl().host)
-                                                .add("referer", "$baseUrl/")
-                                                .add("Origin", "https://${url.toHttpUrl().host}")
-                                                .build()
-                                FilemoonExtractor(client)
-                                        .videosFromUrl(
-                                                url,
-                                                prefix = "Filemoon:",
-                                                headers = newHeaders
-                                        )
-                                        .also(videoList::addAll)
+                                val newHeaders = headers.newBuilder()
+                                    .add("authority", url.toHttpUrl().host)
+                                    .add("referer", "$baseUrl/")
+                                    .add("Origin", "https://${url.toHttpUrl().host}")
+                                    .build()
+                                FilemoonExtractor(client).videosFromUrl(url, prefix = "Filemoon:", headers = newHeaders).also(videoList::addAll)
                             } catch (_: Exception) {}
                         }
                     }
@@ -156,75 +126,37 @@ class MundoDonghua : ConfigurableAnimeSource, ParsedAnimeHttpSource() {
                         try {
                             val slug = unpack.substringAfter("\"slug\":\"").substringBefore("\"")
 
-                            val newHeaders =
-                                    headers.newBuilder()
-                                            .add("referer", "${response.request.url}")
-                                            .add("authority", baseUrl.substringAfter("//"))
-                                            .add("accept", "*/*")
-                                            .build()
+                            val newHeaders = headers.newBuilder()
+                                .add("referer", "${response.request.url}")
+                                .add("authority", baseUrl.substringAfter("//"))
+                                .add("accept", "*/*")
+                                .build()
 
-                            val slugPlayer =
-                                    client.newCall(
-                                                    GET(
-                                                            "$baseUrl/api_donghua.php?slug = $slug",
-                                                            headers = newHeaders
-                                                    )
-                                            )
-                                            .execute()
-                                            .body
-                                            ?.string()
-                                            ?.substringAfter("\"url\":\"")
-                                            ?.substringBefore("\"")
-                                            ?: ""
+                            val slugPlayer = client.newCall(GET("$baseUrl/api_donghua.php?slug=$slug", headers = newHeaders)).execute().asJsoup().body().toString().substringAfter("\"url\":\"").substringBefore("\"")
 
-                            val videoHeaders =
-                                    headers.newBuilder()
-                                            .add("authority", "www.mdplayer.xyz")
-                                            .add("referer", "$baseUrl/")
-                                            .build()
+                            val videoHeaders = headers.newBuilder()
+                                .add("authority", "www.mdplayer.xyz")
+                                .add("referer", "$baseUrl/")
+                                .build()
 
-                            val body =
-                                    client.newCall(
-                                                    GET(
-                                                            "https://www.mdplayer.xyz/nemonicplayer/dmplayer.php?key = $slugPlayer",
-                                                            headers = videoHeaders
-                                                    )
-                                            )
-                                            .execute()
-                                            .body
-                                            ?.string()
-                                            ?: ""
+                            val videoId = client.newCall(GET("https://www.mdplayer.xyz/nemonicplayer/dmplayer.php?key=$slugPlayer", headers = videoHeaders))
+                                .execute().asJsoup().body().toString().substringAfter("video-id=\"").substringBefore("\"")
 
-                            // Regex más robusto para capturar el videoId
-                            val videoId =
-                                    Regex("video_id\":\"(.*?)\"").find(body)?.groupValues?.get(1)
-                                            ?: ""
-
-                            if (videoId.isNotEmpty()) {
-                                val embedUrl = "https://www.dailymotion.com/embed/video/$videoId"
-                                val videos =
-                                        DailymotionExtractor(client, headers)
-                                                .videosFromUrl(embedUrl, prefix = "Dailymotion:")
-                                videoList.addAll(videos)
-                            }
+                            DailymotionExtractor(client, headers).videosFromUrl("https://www.dailymotion.com/embed/video/$videoId", prefix = "Dailymotion:").let { videoList.addAll(it) }
                         } catch (_: Exception) {}
                     }
-
                     if (unpack.contains("asura_tab")) {
                         fetchUrls(unpack).map { url ->
                             try {
                                 if (url.contains("redirector")) {
-                                    val newHeaders =
-                                            headers.newBuilder()
-                                                    .add("authority", "www.mdnemonicplayer.xyz")
-                                                    .add("accept", "*/*")
-                                                    .add("origin", baseUrl)
-                                                    .add("referer", "$baseUrl/")
-                                                    .build()
+                                    val newHeaders = headers.newBuilder()
+                                        .add("authority", "www.mdnemonicplayer.xyz")
+                                        .add("accept", "*/*")
+                                        .add("origin", baseUrl)
+                                        .add("referer", "$baseUrl/")
+                                        .build()
 
-                                    PlaylistUtils(client, newHeaders)
-                                            .extractFromHls(url, videoNameGen = { "Asura:$it" })
-                                            .let { videoList.addAll(it) }
+                                    PlaylistUtils(client, newHeaders).extractFromHls(url, videoNameGen = { "Asura:$it" }).let { videoList.addAll(it) }
                                 }
                             } catch (_: Exception) {}
                         }
@@ -270,108 +202,107 @@ class MundoDonghua : ConfigurableAnimeSource, ParsedAnimeHttpSource() {
         }
     }
 
-    override fun getFilterList(): AnimeFilterList =
-            AnimeFilterList(
-                    AnimeFilter.Header("La busqueda por texto ignora el filtro"),
-                    GenreFilter(),
-            )
+    override fun getFilterList(): AnimeFilterList = AnimeFilterList(
+        AnimeFilter.Header("La busqueda por texto ignora el filtro"),
+        GenreFilter(),
+    )
 
-    private class GenreFilter :
-            UriPartFilter(
-                    "Géneros",
-                    arrayOf(
-                            Pair("<Selecionar>", ""),
-                            Pair("Acción", "Acción"),
-                            Pair("Artes Marciales", "Artes Marciales"),
-                            Pair("Aventura", "Aventura"),
-                            Pair("Ciencia Ficción", "Ciencia Ficción"),
-                            Pair("Comedia", "Comedia"),
-                            Pair("Comida", "Comida"),
-                            Pair("Cultivación", "Cultivación"),
-                            Pair("Demonios", "Demonios"),
-                            Pair("Deportes", "Deportes"),
-                            Pair("Drama", "Drama"),
-                            Pair("Ecchi", "Ecchi"),
-                            Pair("Escolar", "Escolar"),
-                            Pair("Fantasía", "Fantasía"),
-                            Pair("Harem", "Harem"),
-                            Pair("Harem Inverso", "Harem Inverso"),
-                            Pair("Historico", "Historico"),
-                            Pair("Idols", "Idols"),
-                            Pair("Juegos", "Juegos"),
-                            Pair("Lucha", "Lucha"),
-                            Pair("Magia", "Magia"),
-                            Pair("Mechas", "Mechas"),
-                            Pair("Militar", "Militar"),
-                            Pair("Misterio", "Misterio"),
-                            Pair("Música", "Música"),
-                            Pair("Por Definir", "Por Definir"),
-                            Pair("Psicológico", "Psicológico"),
-                            Pair("Reencarnación", "Reencarnación"),
-                            Pair("Romance", "Romance"),
-                            Pair("Seinen", "Seinen"),
-                            Pair("Shojo", "Shojo"),
-                            Pair("Shonen", "Shonen"),
-                            Pair("Sobrenatural", "Sobrenatural"),
-                            Pair("Sucesos de la Vida", "Sucesos de la Vida"),
-                            Pair("Superpoderes", "Superpoderes"),
-                            Pair("Suspenso", "Suspenso"),
-                            Pair("Terror", "Terror"),
-                            Pair("Vampiros", "Vampiros"),
-                            Pair("Viaje a Otro Mundo", "Viaje a Otro Mundo"),
-                            Pair("Videojuegos", "Videojuegos"),
-                            Pair("Zombis", "Zombis"),
-                    ),
-            )
+    private class GenreFilter : UriPartFilter(
+        "Géneros",
+        arrayOf(
+            Pair("<Selecionar>", ""),
+            Pair("Acción", "Acción"),
+            Pair("Artes Marciales", "Artes Marciales"),
+            Pair("Aventura", "Aventura"),
+            Pair("Ciencia Ficción", "Ciencia Ficción"),
+            Pair("Comedia", "Comedia"),
+            Pair("Comida", "Comida"),
+            Pair("Cultivación", "Cultivación"),
+            Pair("Demonios", "Demonios"),
+            Pair("Deportes", "Deportes"),
+            Pair("Drama", "Drama"),
+            Pair("Ecchi", "Ecchi"),
+            Pair("Escolar", "Escolar"),
+            Pair("Fantasía", "Fantasía"),
+            Pair("Harem", "Harem"),
+            Pair("Harem Inverso", "Harem Inverso"),
+            Pair("Historico", "Historico"),
+            Pair("Idols", "Idols"),
+            Pair("Juegos", "Juegos"),
+            Pair("Lucha", "Lucha"),
+            Pair("Magia", "Magia"),
+            Pair("Mechas", "Mechas"),
+            Pair("Militar", "Militar"),
+            Pair("Misterio", "Misterio"),
+            Pair("Música", "Música"),
+            Pair("Por Definir", "Por Definir"),
+            Pair("Psicológico", "Psicológico"),
+            Pair("Reencarnación", "Reencarnación"),
+            Pair("Romance", "Romance"),
+            Pair("Seinen", "Seinen"),
+            Pair("Shojo", "Shojo"),
+            Pair("Shonen", "Shonen"),
+            Pair("Sobrenatural", "Sobrenatural"),
+            Pair("Sucesos de la Vida", "Sucesos de la Vida"),
+            Pair("Superpoderes", "Superpoderes"),
+            Pair("Suspenso", "Suspenso"),
+            Pair("Terror", "Terror"),
+            Pair("Vampiros", "Vampiros"),
+            Pair("Viaje a Otro Mundo", "Viaje a Otro Mundo"),
+            Pair("Videojuegos", "Videojuegos"),
+            Pair("Zombis", "Zombis"),
+        ),
+    )
 
     private open class UriPartFilter(displayName: String, val vals: Array<Pair<String, String>>) :
-            AnimeFilter.Select<String>(displayName, vals.map { it.first }.toTypedArray()) {
+        AnimeFilter.Select<String>(displayName, vals.map { it.first }.toTypedArray()) {
         fun toUriPart() = vals[state].second
     }
 
-    override fun searchAnimeFromElement(): SAnime = popularAnimeFromElement(element)
+    override fun searchAnimeFromElement(element: Element): SAnime {
+        return popularAnimeFromElement(element)
+    }
 
     override fun searchAnimeNextPageSelector(): String = popularAnimeNextPageSelector()
 
     override fun searchAnimeSelector(): String = popularAnimeSelector()
 
-    private fun parseStatus(): Int =
-            when {
-                statusString.contains("En Emisión") -> SAnime.ONGOING
-                statusString.contains("Finalizada") -> SAnime.COMPLETED
-                else -> SAnime.UNKNOWN
-            }
+    private fun parseStatus(statusString: String): Int {
+        return when {
+            statusString.contains("En Emisión") -> SAnime.ONGOING
+            statusString.contains("Finalizada") -> SAnime.COMPLETED
+            else -> SAnime.UNKNOWN
+        }
+    }
 
     override fun setupPreferenceScreen(screen: PreferenceScreen) {
-        val qualities =
-                arrayOf(
-                        "VoeCDN",
-                        "Dailymotion:1080p",
-                        "Dailymotion:720p",
-                        "Dailymotion:480p",
-                        "Filemoon:1080p",
-                        "Filemoon:720p",
-                        "Filemoon:480p",
-                        "Asura:1080p",
-                        "Asura:720p",
-                        "Asura:480p",
-                )
-        val videoQualityPref =
-                ListPreference(screen.context).apply {
-                    key = "preferred_quality"
-                    title = "Preferred quality"
-                    entries = qualities
-                    entryValues = qualities
-                    setDefaultValue("VoeCDN")
-                    summary = "%s"
+        val qualities = arrayOf(
+            "VoeCDN",
+            "Dailymotion:1080p",
+            "Dailymotion:720p",
+            "Dailymotion:480p",
+            "Filemoon:1080p",
+            "Filemoon:720p",
+            "Filemoon:480p",
+            "Asura:1080p",
+            "Asura:720p",
+            "Asura:480p",
+        )
+        val videoQualityPref = ListPreference(screen.context).apply {
+            key = "preferred_quality"
+            title = "Preferred quality"
+            entries = qualities
+            entryValues = qualities
+            setDefaultValue("VoeCDN")
+            summary = "%s"
 
-                    setOnPreferenceChangeListener { _, newValue ->
-                        val selected = newValue as String
-                        val index = findIndexOfValue(selected)
-                        val entry = entryValues[index] as String
-                        preferences.edit().putString(key, entry).commit()
-                    }
-                }
+            setOnPreferenceChangeListener { _, newValue ->
+                val selected = newValue as String
+                val index = findIndexOfValue(selected)
+                val entry = entryValues[index] as String
+                preferences.edit().putString(key, entry).commit()
+            }
+        }
         screen.addPreference(videoQualityPref)
     }
 }
